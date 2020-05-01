@@ -40,6 +40,7 @@ services:
 
 networks:
   staging_network:
+   name: dev_staging_net
 
 volumes:
   nginx-proxy:
