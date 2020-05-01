@@ -27,7 +27,7 @@ services:
       - nginx-html:/usr/share/nginx/html
 
   web:
-    image: datawire/hello-worl
+    image: datawire/hello-world
     environment:
       VIRTUAL_PORT: "8000"
       VIRTUAL_HOST: "labtrendig.com"
