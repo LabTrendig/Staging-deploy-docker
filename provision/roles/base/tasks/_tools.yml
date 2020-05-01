@@ -1,0 +1,19 @@
+- name: Install common tools
+  become: true
+  apt: "name={{ item }} state=present"
+  with_items:
+    - apt-utils
+    - lvm2
+    - htop
+    - tree
+    - tmux
+    - curl
+    - wget
+    - vim
+    - dbus
+    - git-core
+    - ca-certificates
+    - python
+    - python-pip
+    - python-keyczar
+    - python-apt
