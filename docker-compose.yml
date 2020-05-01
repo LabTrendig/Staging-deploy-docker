@@ -35,6 +35,16 @@ services:
     ports:
       - "8000:8000"
 
+  web1:
+    image: datawire/hello-world
+    environment:
+      VIRTUAL_PORT: "8001"
+      VIRTUAL_HOST: "docs.labtrendig.com"
+      LETSENCRYPT_HOST: "docs.labtrendig.com"
+    ports:
+      - "8000:8001"
+
+
 volumes:
   nginx-proxy:
   nginx-certs:
