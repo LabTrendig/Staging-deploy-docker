@@ -26,6 +26,15 @@ services:
       - nginx-vhost:/etc/nginx/vhost.d
       - nginx-html:/usr/share/nginx/html
 
+  web:
+    image: datawire/hello-worl
+    environment:
+      VIRTUAL_PORT: "8000"
+      VIRTUAL_HOST: "labtrendig.com"
+      LETSENCRYPT_HOST: "labtrendig.com"
+    ports:
+      - "8000:8000"
+
 volumes:
   nginx-proxy:
   nginx-certs:
