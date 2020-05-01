@@ -29,15 +29,6 @@ services:
     networks:
       staging_network:
 
-  database:
-    build: provision/postgres
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-    ports:
-      - 5432:5432
-    networks:
-      staging_network:
-
 networks:
   staging_network:
    name: dev_staging_net
@@ -47,4 +38,3 @@ volumes:
   nginx-certs:
   nginx-vhost:
   nginx-html:
-  pgdata:
