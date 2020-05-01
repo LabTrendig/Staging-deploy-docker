@@ -1,4 +1,4 @@
-version: "3"
+version: "3.7"
 
 services:
   nginx-proxy:
@@ -12,6 +12,8 @@ services:
       - ./src/nginx-vhost:/etc/nginx/vhost.d
       - ./src/nginx-html:/usr/share/nginx/html
       - /var/run/docker.sock:/tmp/docker.sock:ro
+    networks:
+      staging_network:
 
   nginx-proxy-letsencrypt:
     image: jrcs/letsencrypt-nginx-proxy-companion
@@ -19,12 +21,13 @@ services:
     environment:
       NGINX_PROXY_CONTAINER: "nginx-proxy"
       DEFAULT_EMAIL: "josuedjh456@gmail.com"
-
     volumes:
       - ./src/nginx-certs:/etc/nginx/certs
       - ./src/nginx-vhost:/etc/nginx/vhost.d
       - ./src/nginx-html:/usr/share/nginx/html
       - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      staging_network:
 
   web:
     image: datawire/hello-world
@@ -35,7 +38,11 @@ services:
       LETSENCRYPT_EMAIL: "josuedjh456@gmail.com"
     ports:
       - "8000:8000"
+    networks:
+      staging_network:
 
+networks:
+  staging_network:
 
 volumes:
   nginx-proxy:
