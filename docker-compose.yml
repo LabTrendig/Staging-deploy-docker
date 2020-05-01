@@ -29,15 +29,12 @@ services:
     networks:
       staging_network:
 
-  web:
-    image: datawire/hello-world
-    environment:
-      VIRTUAL_PORT: "8000"
-      VIRTUAL_HOST: "labtrendig.com,www.labtrendig.com"
-      LETSENCRYPT_HOST: "labtrendig.com,www.labtrendig.com"
-      LETSENCRYPT_EMAIL: "josuedjh456@gmail.com"
+  database:
+    build: provision/postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
     ports:
-      - "8000:8000"
+      - 5432:5432
     networks:
       staging_network:
 
@@ -49,3 +46,4 @@ volumes:
   nginx-certs:
   nginx-vhost:
   nginx-html:
+  pgdata:
