@@ -2,7 +2,7 @@ version: "3"
 
 services:
   web:
-    image: adamkdean/redirect
+    image: josuedjhcayola/kubia:tagname
     expose:
      - 8000
     environment:
@@ -14,7 +14,7 @@ services:
       service_network:
 
   web-redirect:
-    image: adamkdean/redirect
+    image: josuedjhcayola/kubia:tagname
     environment:
       VIRTUAL_HOST: labtrendig.com
       LETSENCRYPT_HOST: labtrendig.com
