@@ -34,7 +34,7 @@ services:
 
     environment:
       NGINX_PROXY_CONTAINER: "nginx-proxy"
-      DEFAULT_EMAIL: "mail@yourdomain.tld"
+      DEFAULT_EMAIL: "hi@labtrendig.com"
 
 networks:
   dev_staging:
