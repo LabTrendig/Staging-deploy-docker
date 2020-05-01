@@ -8,9 +8,9 @@ services:
       - "443:443"
     container_name: nginx-proxy
     volumes:
-      - ./nginx-certs:/etc/nginx/certs
-      - ./nginx-vhost:/etc/nginx/vhost.d
-      - ./nginx-html:/usr/share/nginx/html
+      - ./src/nginx-certs:/etc/nginx/certs
+      - ./src/nginx-vhost:/etc/nginx/vhost.d
+      - ./src/nginx-html:/usr/share/nginx/html
       - /var/run/docker.sock:/tmp/docker.sock:ro
 
   nginx-proxy-letsencrypt:
@@ -21,9 +21,9 @@ services:
       DEFAULT_EMAIL: "hi@labtrendig.com"
 
     volumes:
-      - ./nginx-certs:/etc/nginx/certs
-      - ./nginx-vhost:/etc/nginx/vhost.d
-      - ./nginx-html:/usr/share/nginx/html
+      - ./src/nginx-certs:/etc/nginx/certs
+      - ./src/nginx-vhost:/etc/nginx/vhost.d
+      - ./src/nginx-html:/usr/share/nginx/html
       - /var/run/docker.sock:/var/run/docker.sock:ro
 
   web:
