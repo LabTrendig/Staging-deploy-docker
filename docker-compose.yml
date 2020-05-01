@@ -21,8 +21,7 @@ services:
     container_name: nginx-proxy-letsencrypt
     environment:
       NGINX_PROXY_CONTAINER: "nginx-proxy"
-      LETSENCRYPT_EMAIL: "mail@yourdomain.tld"
-
+      DEFAULT_EMAIL: "josuedjh456@gmail.com"
 
     volumes:
       - ./src/nginx-certs:/etc/nginx/certs
