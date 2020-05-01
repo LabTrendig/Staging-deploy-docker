@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  web:
+    image: datawire/hello-world
+    environment:
+      VIRTUAL_PORT: "8000"
+      VIRTUAL_HOST: "labtrendig.com,www.labtrendig.com"
+      LETSENCRYPT_HOST: "labtrendig.com,www.labtrendig.com"
+      LETSENCRYPT_EMAIL: "josuedjh456@gmail.com"
+    ports:
+      - "8000:8000"
+
+networks:
+  default:
+    external:
+      name: dev_staging_net
