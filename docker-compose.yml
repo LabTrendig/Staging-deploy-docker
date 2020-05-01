@@ -36,6 +36,18 @@ services:
       NGINX_PROXY_CONTAINER: "nginx-proxy"
       DEFAULT_EMAIL: "hi@labtrendig.com"
 
+  web:
+    image: adamkdean/redirect
+    expose:
+     - 8000
+    environment:
+      HTTP_PORT: 8000
+      VIRTUAL_HOST: www.task.labtrendig.com
+      LETSENCRYPT_HOST: www.task.labtrendig.com
+      LETSENCRYPT_EMAIL: "hi@labtrendig.com"
+    networks:
+      dev_staging:
+
 networks:
   dev_staging:
 
