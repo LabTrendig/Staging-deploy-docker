@@ -52,7 +52,7 @@ services:
     image: grafana/grafana
     environment:
       VIRTUAL_HOST: 3000
-      LETSENCRYPT_HOST: apps.labtrendig.com
+      LETSENCRYPT_HOST: labtrendig.com
       LETSENCRYPT_EMAIL: "hi@labtrendig.com"
     networks:
       dev_staging:
