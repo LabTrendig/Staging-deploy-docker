@@ -7,6 +7,7 @@ services:
       - "80:80"
       - "443:443"
     container_name: nginx-proxy
+    restart: always
     volumes:
       - ./src/nginx-certs:/etc/nginx/certs
       - ./src/nginx-vhost:/etc/nginx/vhost.d
@@ -18,6 +19,7 @@ services:
   nginx-proxy-letsencrypt:
     image: jrcs/letsencrypt-nginx-proxy-companion
     container_name: nginx-proxy-letsencrypt
+    restart: always
     environment:
       NGINX_PROXY_CONTAINER: "nginx-proxy"
       DEFAULT_EMAIL: "josuedjh456@gmail.com"
