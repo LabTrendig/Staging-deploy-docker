@@ -12,6 +12,7 @@ services:
       - ./src/nginx-certs:/etc/nginx/certs
       - ./src/nginx-vhost:/etc/nginx/vhost.d
       - ./src/nginx-html:/usr/share/nginx/html
+      - ./src/nginx/htpasswd:/etc/nginx/htpasswd
       - /var/run/docker.sock:/tmp/docker.sock:ro
     networks:
       staging_network:
