@@ -14,6 +14,7 @@ services:
       - ./src/nginx-html:/usr/share/nginx/html
       - ./src/nginx/htpasswd:/etc/nginx/htpasswd
       - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./src/nginx/client_max_body_size.conf:/etc/nginx/conf.d/client_max_body_size.conf:ro
     networks:
       staging_network:
 
